@@ -4,9 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Essay repeating words finder</title>
+    <title>Essay repeated words finder</title>
 </head>
 <body>
+    <div class="wrapper">
+        <div class="input card">
+            <div class="card__header">
+                <div class="card__tag">Twój tekst</div>
+                <button class="input__button">Weryfikuj</button>
+            </div>
+            <textarea class="input__text" placeholder="Wklej tutaj tekst..."></textarea>
+        </div>
+        <div class="duplicates card">
+            <div class="card__header">
+                <div class="card__tag">Powtórzone słowa: <span class="duplicates__words-count">5</span></div>
+            </div>
+            <div class="card__body">
+                <div class="duplicates__list-headers">
+                    <h5 class="duplicates__list-header">Słowo</h5>
+                    <h5 class="duplicates__list-header">Liczba</h5>
+                    <h5 class="duplicates__list-header">Waga</h5>
+                </div>
+                <ul class="duplicates__list">
+                    <li class="duplicates__item duplicates__item--active">
+                        <div class="duplicates__item-word">ponieważ</div>
+                        <div class="duplicates__item-count">4</div>
+                        <div class="duplicates__item-weight">5.5</div>
+                    </li>
+                    <li class="duplicates__item">
+                        <div class="duplicates__item-word">ponieważ</div>
+                        <div class="duplicates__item-count">4</div>
+                        <div class="duplicates__item-weight">5.5</div>
+                    </li>
+                    <li class="duplicates__item">
+                        <div class="duplicates__item-word">ponieważ</div>
+                        <div class="duplicates__item-count">4</div>
+                        <div class="duplicates__item-weight">5.5</div>
+                    </li>
+                    <li class="duplicates__item">
+                        <div class="duplicates__item-word">ponieważ</div>
+                        <div class="duplicates__item-count">4</div>
+                        <div class="duplicates__item-weight">5.5</div>
+                    </li>
+                    <li class="duplicates__item">
+                        <div class="duplicates__item-word">ponieważ</div>
+                        <div class="duplicates__item-count">4</div>
+                        <div class="duplicates__item-weight">5.5</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="result card">
+            <div class="card__header">
+                <div class="card__tag">Tekst po przeanalizowaniu</div>
+            </div>
+            <div class="card__body">
+                <div class="result__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae neque finibus, facilisis tortor vitae, volutpat justo. Fusce tincidunt tempus <span class="result__highlight result__highlight--first" data-id="0">laoreet</span> porttitor efficitur. Nulla venenatis vitae enim vel eleifend. Pellentesque tempus sit <span class="result__highlight result__highlight--next" data-id="1">laoreet</span> dui sed ornare. Pellentesque tempor cursus nibh, nec placerat nibh cursus fermentum. <span class="result__highlight result__highlight--next" data-id="2">laoreet</span> imperdiet aliquet. Donec sapien neque, fringilla sed accumsan vel, malesuada quis <span class="result__highlight result__highlight--next" data-id="3">laoreet</span>. Sed finibus enim quis suscipit. Praesent hendrerit ex at mauris commodo efficitur. Morbi viverra vestibulum ullamcorper. Integer molestie sodales arcu, quis cursus tellus laoreet vel. Aenean nec sem libero.
     
+                    Proin aliquam semper euismod.  convallis nibh vitae porttitor tempus. Duis auctor condimentum lorem, id sodales sem facilisis at. Interdum et malesuada fames ac ipsum primis in faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras gravida semper rhoncus. Donec rutrum lacus mi, sed malesuada velit sollicitudin in. Nullam malesuada massa at tincidunt viverra. Nunc accumsan tortor ligula, eget euismod dolor pharetra ac. Vivamus sed urna et massa blandit semper. Phasellus ultrices ac dolor at gravida. Aliquam id est in metus viverra facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris et mauris erat. Suspendisse eget dolor tempor, molestie massa vitae, tristique augue.
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -25,9 +25,11 @@
     box-sizing: border-box;
 }
 
-body {
+html {
     height: 100vh;
-    overflow: hidden;
+}
+
+body {
     background-color: var(--dark-gray);
     font-family: 'Neuville', 'Montserrat', sans-serif;
     /* 
@@ -47,7 +49,7 @@ body {
     grid-gap: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 350px;
+    grid-auto-rows: 400px;
 }
 
 /* CARD */
@@ -65,7 +67,7 @@ body {
 
 .card__header {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 
@@ -94,7 +96,7 @@ body {
 .input__text {
     all: unset;
     width: 100%;
-    height: 80%;
+    height: 85%;
     overflow-y: auto;
     font-size: 20px;
     font-weight: 300;
@@ -102,28 +104,29 @@ body {
 
 
 /* DATA SECTION */
-.duplicates {
+.data {
     grid-row: 2/3;
     grid-column: 1/2;
 }
 
-.duplicates__list-headers {
+.data__list-headers {
     position: relative;
     margin-bottom: 10px;
-    font-size: 16px;
 }
 
-.duplicates__list-header {
+.data__list-header {
     display: inline-block;
+    font-size: 16px;
+    font-weight: 300;
 }
 
-.duplicates__list {
+.data__list {
     list-style: none;
-    height: 250px;
+    height: 280px;
     overflow-y: auto;
 }
 
-.duplicates__item {
+.data__item {
     position: relative;
     margin-bottom: 10px;
     margin-right: 10px;
@@ -131,35 +134,47 @@ body {
     border-radius: 8px;
     background-color: var(--light-gray);
     font-size: 19px;
+    animation: stretch .25s ease-in;
 }
-.duplicates__item:hover { background-color: var(--gray); }
+.data__item:hover { background-color: var(--gray); }
 
-.duplicates__item--active { background-color: var(--dark-gray); }
-.duplicates__item--active:hover { background-color: var(--dark-gray); }
+@keyframes stretch {
+    0% {
+        bottom: -20px;
+        opacity: 0;
+    }
+    100% {
+        bottom: 0;
+        opacity: 1;
+    }
+}
 
-.duplicates__list-header:nth-child(1),
-.duplicates__item-word {
+.data__item--active { background-color: var(--dark-gray); }
+.data__item--active:hover { background-color: var(--dark-gray); }
+
+.data__list-header:nth-child(1),
+.data__item-word {
     width: 250px;
     padding-left: 20px;
 }
 
-.duplicates__list-header:nth-child(2),
-.duplicates__list-header:nth-child(3)  {
+.data__list-header:nth-child(2),
+.data__list-header:nth-child(3)  {
     position: absolute;
     bottom: 0;
     transform: translateX(-50%);
 }
 
-.duplicates__list-header:nth-child(2),
-.duplicates__item-count { left: 275px; }
+.data__list-header:nth-child(2),
+.data__item-occurance-count { left: 275px; }
 
-.duplicates__list-header:nth-child(3),
-.duplicates__item-weight { left: 360px; }
+.data__list-header:nth-child(3),
+.data__item-importance { left: 360px; }
 
-.duplicates__item > div { display: inline-block; }
+.data__item > div { display: inline-block; }
 
-.duplicates__item-count,
-.duplicates__item-weight {
+.data__item-occurance-count,
+.data__item-importance {
     position: absolute;
     top: 50%;
     min-width: 30px;
@@ -171,40 +186,37 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.duplicates__item-count {
+.data__item-occurance-count {
     background-color: var(--red);
 }
 
-.duplicates__item-weight {
+.data__item-importance {
     background-color: var(--blue);
 }
 
-/* RESULT SECTION */
-.result {
+/* visualization SECTION */
+.visualization {
     grid-row: 1/3;
     grid-column: 2/3;
 }
 
-.result__text {
-    height: 650px;
+.visualization__text {
+    height: 750px;
     font-size: 20px;
     font-weight: 300;
     line-height: 25px;
     overflow-y: auto;
 }
 
-.result__highlight {
+.visualization__highlight {
     padding: 0 4px;
     border-radius: 5px;
 }
 
-.result__highlight--first {
+.visualization__highlight--first {
     background-color: rgba(68, 189, 50, .75);
 }
 
-.result__highlight--next {
+.visualization__highlight--next {
     background-color: rgba(223, 33, 37, .8);
 }
-.result__highlight--next:nth-child(2) { background-color: rgba(223, 33, 37, .75); }
-.result__highlight--next:nth-child(3) { background-color: rgba(223, 33, 37, .65); }
-.result__highlight--next:nth-child(4) { background-color: rgba(223, 33, 37, .60); }

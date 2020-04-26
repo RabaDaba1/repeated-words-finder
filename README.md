@@ -1,2 +1,2 @@
 # Repeted words finder
-Copy your esay click 'test' and get information about all duplicate words in your work
+Copy your essay click 'check' and get information about all of the repeated words in your work

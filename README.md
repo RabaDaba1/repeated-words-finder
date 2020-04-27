@@ -16,7 +16,7 @@
 
 ## Instalacja
 
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
+### [Link to poradnika](https://www.youtube.com/watch?v=Cf8gOnz-Fn4)
 
 ---
 

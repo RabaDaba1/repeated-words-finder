@@ -1,3 +1,6 @@
+/* CSS */
+import '../css/style.css'; 
+/* JS */
 import Text from './models/Text';
 import { elements } from './views/base';
 import * as textView from './views/textView';

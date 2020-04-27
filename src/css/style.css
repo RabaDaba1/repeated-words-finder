@@ -1,3 +1,10 @@
+/* RESETS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 /* SETUP */
 :root {
     --white: #F5F6FA;
@@ -17,13 +24,6 @@
 ::-webkit-scrollbar-thumb { background: var(--dark-gray); border-radius: 8px; }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover { background: var(--blue); }
-
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
 html {
     height: 100vh;
@@ -215,8 +215,21 @@ body {
 
 .visualization__highlight--first {
     background-color: rgba(68, 189, 50, .75);
+    animation: stretch .5s;
 }
 
 .visualization__highlight--next {
     background-color: rgba(223, 33, 37, .8);
+    animation: stretch .5s;
+}
+
+@keyframes stretch {
+    0% {
+        bottom: -30px;
+        opacity: 0;
+    }
+    100% {
+        bottom: 0;
+        opacity: 1;
+    }
 }

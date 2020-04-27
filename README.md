@@ -16,7 +16,7 @@
 
 ## Instalacja
 
-**[Link to poradnika](https://www.youtube.com/watch?v=Cf8gOnz-Fn4)**
+### [Link to poradnika](https://www.youtube.com/watch?v=Cf8gOnz-Fn4)
 
 ---
 

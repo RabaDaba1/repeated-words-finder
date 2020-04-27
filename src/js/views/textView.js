@@ -33,3 +33,5 @@ export const highlightSelected = item => {
 
     item.classList.add('data__item--active');
 };
+
+export const getFirstRepeatedWord = () => document.querySelector('.data__item:nth-of-type(1)');

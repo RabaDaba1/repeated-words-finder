@@ -12,6 +12,30 @@ import * as visualizationView from './views/visualizationView';
  */
 const state = {}
 
+/**
+ * VISUALIZATION CONTROLLER
+ */
+const controlVisualization = item => {
+    // 1) Get id
+    const id = item.dataset.id;
+    
+    // 2) Prepare UI
+    visualizationView.clearVisualizationText();
+    textView.highlightSelected(item);
+
+    // 3) Render visualization
+    visualizationView.renderVisualization(state.text.text, state.text.repeatedWords[id]);
+
+    // 4) Scorll to the first higlighted word
+    visualizationView.scrollToFirstHighlight();
+}
+
+elements.wordList.addEventListener('click', e => {
+    const item = e.target.closest('.data__item');
+    if(item && !item.classList.contains('data__item--active')) {
+        controlVisualization(item);
+    }
+});
 
 /**
  * TEXT CONTROLLER
@@ -36,30 +60,13 @@ const controlText = () => {
 
         // 6) Render text data
         textView.renderListItems(state.text.repeatedWords);
+
+        const fistRepeatedWordEl = textView.getFirstRepeatedWord();
+        if(fistRepeatedWordEl) {
+            // 7) Render first word visualization
+            controlVisualization(fistRepeatedWordEl);
+        }
     }
 }
 
 elements.button.addEventListener('click', controlText);
-
-/**
- * VISUALIZATION CONTROLLER
- */
-
-const controlVisualization = item => {
-    // 1) Get id
-    const id = item.dataset.id;
-    
-    // 2) Prepare UI
-    visualizationView.clearVisualizationText();
-    textView.highlightSelected(item);
-
-    // 3) Render visualization
-    visualizationView.renderVisualization(state.text.text, state.text.repeatedWords[id]);
-}
-
-elements.wordList.addEventListener('click', e => {
-    const item = e.target.closest('.data__item');
-    if(item) {
-        controlVisualization(item);
-    }
-});

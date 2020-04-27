@@ -16,3 +16,11 @@ export const renderVisualization = (text, wordData) => {
 
     elements.visualizationText.insertAdjacentHTML('afterbegin', markup);
 }
+
+export const scrollToFirstHighlight = () => {
+    const   textRect = elements.visualizationText.getBoundingClientRect(),
+            firstHighlightRect = document.querySelector('.visualization__highlight--first').getBoundingClientRect(),
+            offset   = firstHighlightRect.top - textRect.top;
+
+    elements.visualizationText.scrollTo(0, offset);
+}

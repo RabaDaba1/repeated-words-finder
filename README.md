@@ -8,25 +8,15 @@
 
 ## Spis Teści
 
-- [Pobieranie](#pobieranie)
 - [Instalacja](#instalacja)
-- [Używanie](#używanie)
+- [Dokumentacja](#dokumentacja)
 - [Licencja](#licencja)
-
----
-
-## Pobieranie
-
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
 
 ---
 
 ## Instalacja
 
-
----
-
-## Używanie
+![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
 
 ---
 

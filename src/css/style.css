@@ -206,6 +206,7 @@ body {
     font-weight: 300;
     line-height: 25px;
     overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 .visualization__highlight {

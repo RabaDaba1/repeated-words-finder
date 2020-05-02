@@ -1,6 +1,6 @@
 export default class Text {
     constructor(text, wordIsNotRepeatedAfter) {
-        this.wordIsNotRepeatedAfter = wordIsNotRepeatedAfter;
+        this.wordIsNotRepeatedAfter = parseInt(wordIsNotRepeatedAfter, 10);
         this.text = text;
         this.splitText = text.split(/[ \n\t\r]/);
         this.findRepeatingWords();
@@ -17,7 +17,7 @@ export default class Text {
 
             if (curWord){
                 const indexInReapetedWords = this.repeatedWords.map(el => el.word.toLowerCase()).lastIndexOf(curWord.toLowerCase());
-
+                
                 let indexesArr;
                 if (indexInReapetedWords > -1) indexesArr = this.repeatedWords[indexInReapetedWords].indexes;
 
@@ -58,22 +58,24 @@ export default class Text {
     }
 
     sortRepeatedWordsArr(sortBy = 'importance', order='desc') {
-        function dynamicsort(property,order) {
-            var sort_order = 1;
-            if(order === "desc"){
-                sort_order = -1;
-            }
-            return function (a, b){
-                if(a[property] < b[property]){
-                        return -1 * sort_order;
-                }else if(a[property] > b[property]){
-                        return 1 * sort_order;
-                }else{
-                        return 0 * sort_order;
-                }
-            }
-        }
+        // function dynamicsort(property,order) {
+        //     var sort_order = 1;
+        //     if(order === "desc"){
+        //         sort_order = -1;
+        //     }
+        //     return function (a, b){
+        //         if(a[property] < b[property]){
+        //                 return -1 * sort_order;
+        //         }else if(a[property] > b[property]){
+        //                 return 1 * sort_order;
+        //         }else{
+        //                 return 0 * sort_order;
+        //         }
+        //     }
+        // }
 
-        this.repeatedWords.sort(dynamicsort(sortBy, order));
+        // this.repeatedWords.sort(dynamicsort(sortBy, order));
+
+        this.repeatedWords.sort((a, b) => b.importance - a.importance);
     }
 }

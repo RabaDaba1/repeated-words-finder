@@ -64,9 +64,10 @@ const controlText = () => {
         // 6) Render text data
         textView.renderListItems(state.text.repeatedWords);
 
+        // 7) Get firts repeated word
         const fistRepeatedWordEl = textView.getFirstRepeatedWord();
         if(fistRepeatedWordEl) {
-            // 7) Render first word visualization
+            // 8) Render first word visualization
             controlVisualization(fistRepeatedWordEl);
         }
     }

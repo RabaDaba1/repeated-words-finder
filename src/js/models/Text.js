@@ -58,24 +58,24 @@ export default class Text {
     }
 
     sortRepeatedWordsArr(sortBy = 'importance', order='desc') {
-        // function dynamicsort(property,order) {
-        //     var sort_order = 1;
-        //     if(order === "desc"){
-        //         sort_order = -1;
-        //     }
-        //     return function (a, b){
-        //         if(a[property] < b[property]){
-        //                 return -1 * sort_order;
-        //         }else if(a[property] > b[property]){
-        //                 return 1 * sort_order;
-        //         }else{
-        //                 return 0 * sort_order;
-        //         }
-        //     }
-        // }
+        function dynamicsort(property,order) {
+            var sort_order = 1;
+            if(order === "desc"){
+                sort_order = -1;
+            }
+            return function (a, b){
+                if(a[property] < b[property]){
+                        return -1 * sort_order;
+                }else if(a[property] > b[property]){
+                        return 1 * sort_order;
+                }else{
+                        return 0 * sort_order;
+                }
+            }
+        }
 
-        // this.repeatedWords.sort(dynamicsort(sortBy, order));
+        this.repeatedWords.sort(dynamicsort(sortBy, order));
 
-        this.repeatedWords.sort((a, b) => b.importance - a.importance);
+        // this.repeatedWords.sort((a, b) => b.importance - a.importance);
     }
 }

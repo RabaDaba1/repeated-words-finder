@@ -4,6 +4,8 @@ export const getInput = () => elements.textInput.value;
 
 export const getWordIsNotRepeatedAfter = () => elements.wordIsNotRepeatedAfter.value;
 
+export const toDisableButton = (toDisable) => elements.button.disabled = toDisable;
+
 export const clearList = () =>  elements.wordList.innerHTML = '';
 
 export const resetRepeatedWordsCount = () => elements.repeatedWordsCount.textContent = 0;

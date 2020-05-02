@@ -10,7 +10,9 @@ import * as visualizationView from './views/visualizationView';
 /** Global state of the app
  * - Text object
  */
-const state = {}
+const state = {
+    hotReloading: false
+}
 
 /**
  * VISUALIZATION CONTROLLER
@@ -69,5 +71,22 @@ const controlText = () => {
         }
     }
 }
+
+elements.hotReload.addEventListener('change', function() {
+    if (this.checked) {
+        state.hotReloading = true;
+        textView.toDisableButton(true);
+        elements.textInput.addEventListener('input', function() {
+            if (state.hotReloading) controlText();
+        });
+        controlText();
+    } else {
+        state.hotReloading = false;
+        textView.toDisableButton(false);
+        elements.textInput.removeEventListener('input', function() {
+            if (state.hotReloading) controlText();
+        });
+    }
+})
 
 elements.button.addEventListener('click', controlText);

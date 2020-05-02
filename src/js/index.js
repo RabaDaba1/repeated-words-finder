@@ -46,11 +46,12 @@ const controlText = () => {
 
     if (input) {
         // 2) Add text object to the state
-        state.text = new Text(input);
+        state.text = new Text(input, textView.getWordIsNotRepeatedAfter());
         
         // 3) Prepare UI for data
         textView.clearList();
         textView.resetRepeatedWordsCount();
+        visualizationView.clearVisualizationText();
 
         // 4) Sort repeatedWords array according to importance
         state.text.sortRepeatedWordsArr();

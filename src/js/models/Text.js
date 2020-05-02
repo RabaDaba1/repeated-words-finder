@@ -1,14 +1,12 @@
 export default class Text {
-    constructor(text) {
+    constructor(text, wordIsNotRepeatedAfter) {
+        this.wordIsNotRepeatedAfter = wordIsNotRepeatedAfter;
         this.text = text;
         this.splitText = text.split(/[ \n\t\r]/);
         this.findRepeatingWords();
-
     }
 
     findRepeatingWords() {
-        // Word is repeated if the same word occured in the span of 50 words
-        const isRepeatedAfter = 40;
         const characterSet = ',.)(?!~"\t-'
 
         let splitText = this.splitText;
@@ -25,7 +23,7 @@ export default class Text {
 
                 // Checks if word wasn't already repeated or if the distance between this word and first occurance in last repeat streak is greater than 50 words
                 // so the words that are already counted as repeated don't get counted again
-                if (indexInReapetedWords === -1 || i - indexesArr[indexesArr.length-1] > isRepeatedAfter) {
+                if (indexInReapetedWords === -1 || i - indexesArr[indexesArr.length-1] > this.wordIsNotRepeatedAfter) {
 
                     const word = {
                         word: curWord,
@@ -36,7 +34,7 @@ export default class Text {
                     
                     const regexAreEqual = new RegExp(`^[${characterSet}]?${curWord}[${characterSet}]?$`, 'im');
                     const loopAndUpadteLimit = index => {
-                        for (let j = index+1; j <= index+isRepeatedAfter && j < splitText.length; j++) {
+                        for (let j = index+1; j <= index+this.wordIsNotRepeatedAfter && j < splitText.length; j++) {
                             if (regexAreEqual.test(splitText[j])) {
                                 word.occuranceCount++;
                                 word.indexes.push(j);

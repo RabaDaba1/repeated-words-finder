@@ -77,6 +77,18 @@ body {
     grid-column: 1/2;
 }
 
+.input__word-limit {
+    position: absolute;
+    top: -30px;
+    color: gray;
+    font-weight: 300;
+}
+
+.input__word-limit-input {
+    all: unset;
+    width: 50px;
+}
+
 .input__button {
     all: unset;
     margin-left: auto;

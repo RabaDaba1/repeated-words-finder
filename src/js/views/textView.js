@@ -2,6 +2,8 @@ import { elements } from './base';
 
 export const getInput = () => elements.textInput.value;
 
+export const getWordIsNotRepeatedAfter = () => elements.wordIsNotRepeatedAfter.value;
+
 export const clearList = () =>  elements.wordList.innerHTML = '';
 
 export const resetRepeatedWordsCount = () => elements.repeatedWordsCount.textContent = 0;

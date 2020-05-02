@@ -24,7 +24,7 @@ const controlVisualization = item => {
     textView.highlightSelected(item);
 
     // 3) Render visualization
-    visualizationView.renderVisualization(state.text.text, state.text.repeatedWords[id]);
+    visualizationView.renderVisualization(state.text.splitText, state.text.repeatedWords[id]);
 
     // 4) Scorll to the first higlighted word
     visualizationView.scrollToFirstHighlight();

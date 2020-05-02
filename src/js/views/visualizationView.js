@@ -2,8 +2,8 @@ import { elements } from './base';
 
 export const clearVisualizationText = () => elements.visualizationText.innerHTML = ''
 
-export const renderVisualization = (text, wordData) => {
-    let markup = text.split(' ');
+export const renderVisualization = (splitText, wordData) => {
+    let markup = [...splitText];
 
     wordData.indexes.forEach((indexInText, i) => {
         let highlightClass;

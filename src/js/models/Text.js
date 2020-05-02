@@ -1,6 +1,7 @@
 export default class Text {
     constructor(text) {
         this.text = text;
+        this.splitText = text.split(/[ \n\t\r]/);
         this.findRepeatingWords();
 
     }
@@ -8,9 +9,9 @@ export default class Text {
     findRepeatingWords() {
         // Word is repeated if the same word occured in the span of 50 words
         const isRepeatedAfter = 40;
-        const characterSet = ',.)(?!~"\n\t\r -'
+        const characterSet = ',.)(?!~"\t-'
 
-        let splitText = this.text.split(' ');
+        let splitText = this.splitText;
         this.repeatedWords = [];
 
         for (let i = 0; i < splitText.length; i++) {
@@ -33,7 +34,7 @@ export default class Text {
                         indexes: [i],
                     };
                     
-                    const regexAreEqual = new RegExp(`([${characterSet}]${curWord}[${characterSet}])|(^${curWord}$)|([${characterSet}]${curWord}$)|(^${curWord}[${characterSet}])`, 'i');
+                    const regexAreEqual = new RegExp(`^[${characterSet}]?${curWord}[${characterSet}]?$`, 'im');
                     const loopAndUpadteLimit = index => {
                         for (let j = index+1; j <= index+isRepeatedAfter && j < splitText.length; j++) {
                             if (regexAreEqual.test(splitText[j])) {

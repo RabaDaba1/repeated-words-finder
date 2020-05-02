@@ -75,7 +75,5 @@ export default class Text {
         }
 
         this.repeatedWords.sort(dynamicsort(sortBy, order));
-
-        // this.repeatedWords.sort((a, b) => b.importance - a.importance);
     }
 }

@@ -72,6 +72,8 @@ const controlText = () => {
     }
 }
 
+elements.button.addEventListener('click', controlText);
+
 elements.hotReload.addEventListener('change', function() {
     if (this.checked) {
         state.hotReloading = true;
@@ -89,4 +91,6 @@ elements.hotReload.addEventListener('change', function() {
     }
 })
 
-elements.button.addEventListener('click', controlText);
+elements.wordIsNotRepeatedAfter.addEventListener('input', () => {
+    if (state.hotReloading) controlText();
+});

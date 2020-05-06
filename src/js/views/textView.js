@@ -4,13 +4,13 @@ export const getInput = () => elements.textInput.value;
 
 export const getWordIsNotRepeatedAfter = () => elements.wordIsNotRepeatedAfter.value;
 
-export const toDisableButton = (toDisable) => elements.button.disabled = toDisable;
+export const toDisableButton = toDisable => elements.button.disabled = toDisable;
 
 export const clearList = () =>  elements.wordList.innerHTML = '';
 
 export const resetRepeatedWordsCount = () => elements.repeatedWordsCount.textContent = 0;
 
-export const displayRepeatedWordsCount = (count) => elements.repeatedWordsCount.textContent = count;
+export const displayRepeatedWordsCount = count => elements.repeatedWordsCount.textContent = count;
 
 export const renderListItem = (id, wordData) => {
     const markup = `
@@ -24,11 +24,7 @@ export const renderListItem = (id, wordData) => {
     elements.wordList.insertAdjacentHTML('beforeend', markup);
 }
 
-export const renderListItems = (repeatedWords) => {
-    repeatedWords.forEach((el, i) => {
-        renderListItem(i, el);
-    });
-}
+export const renderListItems = repeatedWords => repeatedWords.forEach((el, i) => renderListItem(i, el));
 
 export const highlightSelected = item => {
     const wordArr = Array.from(document.querySelectorAll('.data__item'));

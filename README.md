@@ -9,7 +9,6 @@
 ## Spis Teści
 
 - [Instalacja](#instalacja)
-- [Dokumentacja](#dokumentacja)
 - [Licencja](#licencja)
 
 ---
@@ -17,12 +16,6 @@
 ## Instalacja
 
 ### [Link to poradnika](https://www.youtube.com/watch?v=Cf8gOnz-Fn4)
-
----
-
-## Dokumentacja
-
->w trakcie pracy...
 
 ---
 
